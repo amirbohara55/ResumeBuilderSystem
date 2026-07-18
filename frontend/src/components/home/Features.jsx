@@ -1,4 +1,5 @@
 import React from 'react'
+import Title from './Title';
 
 const Features = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
@@ -11,9 +12,11 @@ const Features = () => {
                     font-family: 'Poppins', sans-serif;
                 }
             `}</style>
+
+            <Title title='Build Your Resume' description='Create standout resumes with AI-powered writing assistance, professionally designed templates and easy customization to land your dream job faster.' /> 
             
             <div className="flex flex-col md:flex-row items-center">
-                <img className="max-w-2xl w-full" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/card-image-1.png" alt="" />
+                <img className="max-w-2xl w-full" src="https://images.openai.com/static-rsc-4/7MRgZUzNqPoo54kpv14eMAVoWAMSD9eogmAttq4RtNsL8CMS2SpxmEjvs07gcMpYyHT5HfmIB6iSijWSWoM8332EViwt3tFtBMd6rXk25_NlLm0QyWnx3v6cYHam_YqqfVCqvV5ukgC2PE7xa_fE1v_ocHSypfESMkDyh6RUf0iMMVW33TwASoWHaIQzMH_T?purpose=fullsize" alt="" />
                 <div className="space-y-10 px-4 md:px-0">
                     <div className="flex items-center justify-center gap-6 max-w-md">
                         <div className="p-6 aspect-square bg-violet-100 rounded-full">
