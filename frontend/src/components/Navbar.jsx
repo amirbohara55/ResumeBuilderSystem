@@ -7,7 +7,7 @@ const Navbar = () => {
     }
     const Navigate = useNavigate()    
     const logoutUser = () => {
-        Navbar('/')  
+        Navigate('/')    //Navbar rakheko xu pahila 
     }
   return (
     <div className='shadow bg-white'>
