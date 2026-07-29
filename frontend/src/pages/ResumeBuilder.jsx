@@ -3,7 +3,10 @@ import { Link, useParams } from 'react-router-dom'
 import { dummyResumeData } from '../assets/assets'
 import ResumePreview from '../components/ResumePreview'
 import TemplateSelector from '../components/TemplateSelector'
-import ColorPicker from '../components/ColorPicker' 
+import ColorPicker from '../components/ColorPicker'
+import ProfessionalSummeryForm from '../components/ProfessionalSummeryForm'
+import ExperienceForm from '../components/ExperienceForm'
+
 
 import {
   ArrowLeftIcon,
@@ -17,6 +20,7 @@ import {
   ChevronRight
 } from 'lucide-react'
 import PersonalInfoForm from '../components/PersonalInfoForm'
+import EducationalForm from '../components/EducationalForm'
 
 const ResumeBuilder = () => {
 
@@ -26,8 +30,8 @@ const ResumeBuilder = () => {
     _id: '',
     title: '',
     personal_info: {},
-    professioanal_summary: {},
-    experiences: [],
+    professional_summary: '',
+    experience: [],
     education: [],
     projects: [],
     skills: [],
@@ -122,9 +126,21 @@ const ResumeBuilder = () => {
                 {activeSection.id === 'personal' && (
                  <PersonalInfoForm  data={resumeData.personal_info} onChange= {(data)=>setResumeData (prev=> ({...prev, personal_info: data }))} removeBackground={removeBackground} setRemoveBackground={setRemoveBackground}/> 
                 )}
-                
-              </div>
+                {
+                  activeSection.id === 'summary' && (
+                    <ProfessionalSummeryForm data={resumeData.professional_summary} onChange={(data)=>setResumeData(prev=>({...prev, professional_summary: data}))} setResumeData={setResumeData}/> 
+                  )}
 
+                  {
+                  activeSection.id === 'experience' && (
+                    <ExperienceForm data={resumeData.experience} onChange={(data)=>setResumeData(prev=>({...prev, experience: data,}))}/>
+                  )}
+                  {
+                  activeSection.id === 'education' && (
+                    <EducationalForm data={resumeData.education} onChange={(data)=>setResumeData(prev=>({...prev, education: data,}))}/>
+                  )}
+                   
+              </div>
             </div>
           </div>
 
